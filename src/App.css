@@ -1,0 +1,161 @@
+/* Importação da fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --light-bg: #ffffff;
+  --dark-color: #333333;
+  --primary-color: #7b2e01; /* Marrom escuro do seu novo header */
+  --card-bg: #d5d4d463;
+}
+
+body.dark-theme {
+  --light-bg: #0f172a;
+  --dark-color: #f1f5f9;
+  --primary-color: #3b82f6; /* Azul no modo dark ou mantenha o marrom se preferir */
+  --card-bg: #1e293b;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background-color: var(--light-bg);
+  color: var(--dark-color);
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+header {
+  background: var(--primary-color);
+  color: #ffffff;
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 82px;
+  color: #ffffff;
+}
+
+main {
+  padding: 40px 15%;
+}
+
+#sobre {
+  margin-bottom: 40px;
+  text-align: center;
+
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Estilização dos Links */
+nav ul a {
+  color: rgba(246, 241, 241, 0.759);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 28px;
+  transition: color 0.3s;
+}
+
+nav ul a:hover { color: rgb(60, 148, 255); }
+nav ul a:active { color: rgb(227, 248, 3); }
+
+#btn-tema {
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.727);
+  color: #020202;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+#btn-tema:hover {
+  background-color: #ffffff;
+}
+
+/* Grid de Projetos */
+#container-projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 40px;
+  padding: 20px 10;
+}
+
+.card-projeto {
+  padding: 15px;
+  border-radius: 18px;
+  transition: transform 0.3s;
+  background-color: var(--card-bg);
+  /* Removi a largura fixa de 600px para garantir a responsividade */
+  width: 100%; 
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-projeto h2 {
+    font-size: 20px;
+    margin: 0;
+    color: #9e9ea1;
+}
+
+.card-projeto:hover {
+  transform: scale(0.98);
+}
+
+.fotos-proj {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  margin: 20px 0;
+}
+
+.fotos-proj img {
+  max-width: 75%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  text-align: justify;
+  font-size: 18px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    header h1 { font-size: 50px; }
+    nav ul { gap: 30px; }
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+  header h1 { font-size: 40px; }
+  main { padding: 20px 5%; }
+}
